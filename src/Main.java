@@ -8,16 +8,16 @@ public class Main {
         listaTest.agregarALista(24);
         listaTest.agregarALista(14);
         listaTest.agregarALista(4);
+        listaTest.agregarALista(13);
+        listaTest.agregarALista(415);
+        listaTest.agregarALista(16);
 
         //Encontrar nodo
-        Nodo<Integer> a =  listaTest.findNodo(16);
-        Nodo<Integer> b = listaTest.findNodo(14);
-        Nodo<Integer> c = listaTest.findNodo(24);
-        Nodo<Integer> d = listaTest.findNodo(8);
-        Nodo<Integer> e = listaTest.findNodo(4);
-        Nodo<Integer> f = listaTest.findNodo(16);
-
         System.out.println(listaTest.getSize());
+
+        listaTest.delete(24);
+        Nodo<Integer> e = listaTest.findNodo(24);
+
 
 //        System.out.println("<<-- Ejemplo -->>");
 //
