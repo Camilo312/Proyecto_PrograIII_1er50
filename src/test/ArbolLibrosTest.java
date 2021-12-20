@@ -27,12 +27,6 @@ class ArbolLibrosTest {
         setup();
     }
 
-    @org.junit.jupiter.api.Test
-    void findNode() {
-        setup();
-        test.balanceTree();
-        test.getRoot();
-    }
 
     @org.junit.jupiter.api.Test
     void heigtTree() {

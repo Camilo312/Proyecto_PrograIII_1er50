@@ -1,10 +1,6 @@
 package vista;
 
 import Control.Gestion;
-import logic.ArbolLibros;
-import logic.ListaCircular;
-import logic.Nodo;
-import model.Libro;
 
 import javax.swing.*;
 
@@ -24,7 +20,6 @@ public class Main {
 
         try {
             do {
-
                 menu = "";
                 menu += "****** Menú ******\n";
                 menu += "1.- Agregar libro \n";
@@ -41,7 +36,6 @@ public class Main {
                         titulo = JOptionPane.showInputDialog("Escriba el titulo del libro");
                         autor = JOptionPane.showInputDialog("Escriba el autor del libro");
                         gestion.agregar(idLibro, titulo, autor);
-
                         break;
                     case 2:
                         idLibro = JOptionPane.showInputDialog("Ingrese el id del libro a eliminar");
