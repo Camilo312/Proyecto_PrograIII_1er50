@@ -12,7 +12,6 @@ public class Libro {
     private String idLibro;
     private String titulo;
     private String autor;
-    private String genero;
     /**
      *constructor de la clase
      * @param  idLibro que es de tipo string
@@ -27,7 +26,7 @@ public class Libro {
      * @param  titulo que es de tipo string
      * @param  autor que es de tipo string
      */
-    public Libro(String idLibro, String titulo, String autor, String genero) {
+    public Libro(String idLibro, String titulo, String autor) {
         this.idLibro = idLibro;
         this.titulo = titulo;
         this.autor = autor;

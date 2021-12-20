@@ -1,6 +1,8 @@
 package logic;
 
 
+import model.Libro;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,15 +69,18 @@ public class ListaCircular<T> {
     public void delete(T info) {
         if (!isEmpty()) {
             Nodo<T> aux = root;
-            if (root.getInfo() == info) {
-                while (aux.getRight() != root) {
+            if((root == root.getRight())){
+                root.setRight(null);
+                root = null;
+            } else if (((Nodo<Libro>) root).getInfo().getIdLibro().equalsIgnoreCase(((Libro) info).getIdLibro())) {
+                while (!((Nodo<Libro>) aux.getRight()).getInfo().getIdLibro().equalsIgnoreCase(((Nodo<Libro>) root).getInfo().getIdLibro())) {
                     aux = aux.getRight();
                 }
                 root = root.getRight();
                 aux.setRight(aux.getRight().getRight());
             } else {
-                while (aux.getRight() != root) {
-                    if (aux.getRight().getInfo() == info) {
+                while (!(((Nodo<Libro>) aux).getRight().getInfo().getIdLibro()).equalsIgnoreCase(((Nodo<Libro>) root).getInfo().getIdLibro())) {
+                    if (((Nodo<Libro>) aux.getRight()).getInfo().getIdLibro().equalsIgnoreCase(((Libro) info).getIdLibro())) {
                         aux.setRight(aux.getRight().getRight());
                         break;
                     }
@@ -85,12 +90,21 @@ public class ListaCircular<T> {
         }
     }
 
-    public List<Nodo<T>> recorrerDesdeNodo(Nodo<T> node){
+    public Nodo<T> getRoot() {
+        return root;
+    }
+
+    public List<Nodo<T>> recorrerRoot() {
+        return recorrerDesdeNodo(root);
+    }
+
+    public List<Nodo<T>> recorrerDesdeNodo(Nodo<T> node) {
         List<Nodo<T>> nodos = null;
         if (!isEmpty()) {
             nodos = new ArrayList<>();
+            nodos.add(node);
             Nodo<T> aux = node.getRight();
-            while (aux != node){
+            while (!((Nodo<Libro>) aux).getInfo().getIdLibro().equalsIgnoreCase(((Nodo<Libro>) node).getInfo().getIdLibro())) {
                 nodos.add(aux);
                 aux = aux.getRight();
             }

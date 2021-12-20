@@ -1,5 +1,6 @@
 package vista;
 
+import Control.Gestion;
 import logic.ArbolLibros;
 import logic.ListaCircular;
 import logic.Nodo;
@@ -8,23 +9,18 @@ import model.Libro;
 import javax.swing.*;
 
 public class Main {
-    static ListaCircular<Libro> lista = new ListaCircular<>();
-    static ArbolLibros<Libro> arbol = new ArbolLibros<>((((Id1, Id2) -> (Id1.getIdLibro().compareTo(Id2.getIdLibro())))));
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         menu();
-
-
     }
 
     public static void menu() {
-
-        int op = 0;
-        Libro libro = null;
-        String idLibro = null;
-        String titulo = null;
-        String autor = null;
-        String menu = "";
+        Gestion gestion = new Gestion();
+        int op;
+        String idLibro;
+        String titulo;
+        String autor;
+        String menu;
 
         try {
             do {
@@ -44,22 +40,19 @@ public class Main {
                         idLibro = JOptionPane.showInputDialog("Escriba el id del libro");
                         titulo = JOptionPane.showInputDialog("Escriba el titulo del libro");
                         autor = JOptionPane.showInputDialog("Escriba el autor del libro");
-                        lista.agregarALista(libro);
-                        arbol.addNode(libro);
+                        gestion.agregar(idLibro, titulo, autor);
 
                         break;
                     case 2:
                         idLibro = JOptionPane.showInputDialog("Ingrese el id del libro a eliminar");
-                        lista.delete(libro);
-
+                        JOptionPane.showMessageDialog(null, gestion.eliminar(idLibro));
                         break;
                     case 3:
                         idLibro = JOptionPane.showInputDialog("Ingrese el id del libro a buscar");
-                        JOptionPane.showMessageDialog(null, arbol.findNode(new Libro(idLibro)));
-
+                        JOptionPane.showMessageDialog(null, gestion.findNodeTree(idLibro));
                         break;
                     case 4:
-
+                        JOptionPane.showMessageDialog(null,gestion.getListContent());
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "opcion no valida, intentelo de nuevo");
