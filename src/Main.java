@@ -12,13 +12,12 @@ public class Main {
         listaTest.agregarALista(415);
         listaTest.agregarALista(16);
 
-        //Encontrar nodo
-        System.out.println(listaTest.getSize());
+        System.out.println(listaTest.getSize()+"\n");
 
         listaTest.delete(24);
         Nodo<Integer> e = listaTest.findNodo(24);
 
-
+        listaTest.recorrerDesdeNodo(listaTest.findNodo(4)).forEach( i -> System.out.println(i.getInfo()+"\n"));
 //        System.out.println("<<-- Ejemplo -->>");
 //
 //        listaLibros.agregarFinal(24);

@@ -4,11 +4,16 @@ public class Nodo<T> {
     private T info;
     private Nodo<T> left;
     private Nodo<T> right;
+    private int height;
 
     public Nodo(T info) {
         this.info = info;
         this.left = null;
         this.right = null;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public T getInfo() {

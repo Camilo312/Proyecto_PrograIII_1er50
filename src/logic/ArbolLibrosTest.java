@@ -1,16 +1,15 @@
 package logic;
 
-import java.util.Comparator;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArbolLibrosTest {
     ArbolLibros<Integer> test = new ArbolLibros<>(Integer::compare);
 
-    void setup(){
+    void setup() {
+        test.addNode(10);
         test.addNode(5);
-        test.addNode(3);
-        test.addNode(4);
+        test.addNode(15);
+        test.addNode(7);
         test.addNode(6);
     }
 
@@ -22,86 +21,36 @@ class ArbolLibrosTest {
     }
 
     @org.junit.jupiter.api.Test
-    void aaddNode() {
+    void addNode() {
+        setup();
     }
 
     @org.junit.jupiter.api.Test
     void findNode() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void listPresort() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void listInsort() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void listPosort() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void suma() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void listAmplitudeDown() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void listAmplitudeTop() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void gradeNoe() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void isLeaf() {
+        setup();
+        test.balanceTree();
+        test.getRoot();
     }
 
     @org.junit.jupiter.api.Test
     void heigtTree() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void heigthNode() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void finFather() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void findGranFather() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void findhermano() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void weightTree() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void deleteNode() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void gradeNode() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void encontrarRaiz() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void nodosAntes() {
+        setup();
+        assertEquals(0, test.heightNode(test.findNode(6)));
+        assertEquals(2, test.heightNode(test.findNode(5)));
+        assertEquals(1, test.heightNode(test.findNode(3)));
+        assertEquals(0, test.heightNode(test.findNode(4)));
     }
 
     @org.junit.jupiter.api.Test
     void isBalanced() {
+        setup();
+        assertFalse(test.isBalanced());
+        //assertTrue(test.isBalanced());
+    }
+
+    @org.junit.jupiter.api.Test
+    void listPresort() {
+        setup();
+        test.listPresort(test.findNode(5)).forEach(i -> System.out.println(i + "\n"));
     }
 }

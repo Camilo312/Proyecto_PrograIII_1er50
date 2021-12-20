@@ -1,6 +1,9 @@
 package logic;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListaCircular<T> {
     private Nodo<T> root;
 
@@ -80,6 +83,19 @@ public class ListaCircular<T> {
                 }
             }
         }
+    }
+
+    public List<Nodo<T>> recorrerDesdeNodo(Nodo<T> node){
+        List<Nodo<T>> nodos = null;
+        if (!isEmpty()) {
+            nodos = new ArrayList<>();
+            Nodo<T> aux = node.getRight();
+            while (aux != node){
+                nodos.add(aux);
+                aux = aux.getRight();
+            }
+        }
+        return nodos;
     }
 
 }
