@@ -12,7 +12,7 @@ public class Main {
     static ArbolLibros<Libro> arbol = new ArbolLibros<>((((Id1, Id2) -> (Id1.getIdLibro().compareTo(Id2.getIdLibro())))));
 
     public static void main(String[] args) throws Exception {
-    menu();
+        menu();
 
 
     }
@@ -25,6 +25,7 @@ public class Main {
         String titulo = null;
         String autor = null;
         String menu = "";
+
         try {
             do {
 
@@ -60,18 +61,28 @@ public class Main {
                     case 4:
 
                         break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "opcion no valida, intentelo de nuevo");
                 }
             } while (op != 5);
             int resp = JOptionPane.showConfirmDialog(null, "¿Esta segurode abandonar la aplicacion?", "Alerta!", JOptionPane.YES_NO_OPTION);
-            if (resp==0){
+            if (resp == 0) {
                 JOptionPane.showMessageDialog(null, "Gracias por usar la aplicacion \n " + "Cerrando aplicacion...");
                 System.exit(0);
-            }else{
+            } else {
                 menu();
             }
 
-        }catch (Exception e){
-            menu();
+        } catch (NumberFormatException e) {
+            if (!e.toString().equals("java.lang.NumberFormatException: null")) {
+                JOptionPane.showMessageDialog(null, "usted no ha digitado un numero, intente de nuevo");
+
+                menu();
+            } else {
+                JOptionPane.showMessageDialog(null, "hasta luego!");
+                op = 5;
+            }
+
         }
 
 
