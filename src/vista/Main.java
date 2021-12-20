@@ -10,8 +10,9 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+
         ListaCircular<Libro> lista = new ListaCircular<>();
-        ArbolLibros<Libro> arbol = new ArbolLibros<>();
+        ArbolLibros<Libro> arbol = new ArbolLibros<>((((Id1, Id2) -> (Id1.getIdLibro().compareTo(Id2.getIdLibro())))));
 
         int op=0;
         Libro libro = null;
@@ -47,6 +48,7 @@ public class Main {
                 case 3:
                     idLibro = JOptionPane.showInputDialog("Ingrese el id del libro a buscar");
                     JOptionPane.showMessageDialog(null,arbol.findNode(new Libro(idLibro)));
+
                     break;
                 case 4:
 
