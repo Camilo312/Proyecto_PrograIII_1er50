@@ -66,6 +66,7 @@ public class Gestion {
     public String getListContent(){
         String ret = "";
         try {
+            ret=" ----LISTA DE LIBROS----" + '\n' ;
             for (Nodo<Libro> libro :lista.recorrerRoot()) {
                 ret += libro.getInfo();
             }

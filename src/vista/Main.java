@@ -65,8 +65,7 @@ public class Main {
                     case 4:
                         JOptionPane.showMessageDialog(null,gestion.getListContent());
                         break;
-                    default:
-                        JOptionPane.showMessageDialog(null, "opcion no valida, intentelo de nuevo");
+
                 }
             } while (op != 5);
             int resp = JOptionPane.showConfirmDialog(null, "¿Esta segurode abandonar la aplicacion?", "Alerta!", JOptionPane.YES_NO_OPTION);
