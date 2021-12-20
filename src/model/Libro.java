@@ -1,7 +1,7 @@
 package model;
 /**
  * Clase encargada de administrar los datos y
- * atributos del onjeto libro
+ * atributos del objeto libro
  * @version  19/12/21
  * @author Deisy Monroy y Karen Hernández
  */
@@ -45,7 +45,7 @@ public class Libro {
     }
     /**
      *metodo de set de idLibro
-     * @param  idLibro
+     * @param  idLibro de tipo String
      */
     public void setIdLibro(String idLibro) {
         this.idLibro = idLibro;
@@ -59,7 +59,7 @@ public class Libro {
     }
     /**
      *metodo de set de titulo
-     * @param  titulo
+     * @param  titulo de tipo String
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -73,7 +73,7 @@ public class Libro {
     }
     /**
      *metodo de set de autor
-     * @param  autor
+     * @param  autor de tipo String
      */
     public void setAutor(String autor) {
         this.autor = autor;

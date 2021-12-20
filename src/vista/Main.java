@@ -1,15 +1,30 @@
 package vista;
 
 import Control.Gestion;
+import logic.ArbolLibros;
+import logic.ListaCircular;
+import logic.Nodo;
+import model.Libro;
 
 import javax.swing.*;
-
+/**
+ * Clase que permite correr la aplicacion
+ * @version  19/12/21
+ * @author Deisy Monroy y Karen Hernández
+ */
 public class Main {
 
+    /**
+     *Metodo que corre el menu
+     * @param args de tipo String
+     */
     public static void main(String[] args) {
         menu();
     }
 
+    /**
+     *Metodo que muestra el menu
+     */
     public static void menu() {
         Gestion gestion = new Gestion();
         int op;
@@ -20,6 +35,7 @@ public class Main {
 
         try {
             do {
+
                 menu = "";
                 menu += "****** Menú ******\n";
                 menu += "1.- Agregar libro \n";
@@ -36,6 +52,7 @@ public class Main {
                         titulo = JOptionPane.showInputDialog("Escriba el titulo del libro");
                         autor = JOptionPane.showInputDialog("Escriba el autor del libro");
                         gestion.agregar(idLibro, titulo, autor);
+
                         break;
                     case 2:
                         idLibro = JOptionPane.showInputDialog("Ingrese el id del libro a eliminar");

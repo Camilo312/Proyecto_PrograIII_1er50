@@ -4,20 +4,24 @@ package logic;
  * una lista y para el arbol.
  * @version  19/12/21
  * @author Deisy Monroy y Karen Hernández
- * @param <T>
  */
 public class Nodo<T> {
 
     private T info;
     private Nodo<T> left;
     private Nodo<T> right;
-
+    private int height;
     /**constructor que define el nodo
      * @param info de tipo T*/
     public Nodo(T info) {
         this.info = info;
         this.left = null;
         this.right = null;
+    }
+    /**
+     * @param height de tipo int*/
+    public void setHeight(int height) {
+        this.height = height;
     }
     /** metodo que obtiene informacion del nodo
      * @return info*/
