@@ -13,6 +13,10 @@ public class ArbolLibros<T> {
         this.comparator = comparator;
     }
 
+    public ArbolLibros() {
+
+    }
+
     public boolean isEmpty() {
         return root == null;
     }

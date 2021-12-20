@@ -1,4 +1,6 @@
-package logic;
+package test;
+
+import logic.ArbolLibros;
 
 import static org.junit.jupiter.api.Assertions.*;
 
